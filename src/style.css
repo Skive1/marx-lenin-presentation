@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Tối ưu hóa hiệu suất rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tối ưu hóa hiệu suất animation */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.hardware-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Giảm thiểu reflow và repaint */
+.content-visibility-auto {
+  content-visibility: auto;
+}
+
+/* Các lớp utility */
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-6 font-display;
+}
+
+.section-subtitle {
+  @apply text-xl md:text-2xl font-semibold mb-4 font-display;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-custom p-6 transition-all duration-300 hover:shadow-custom-lg;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-secondary-600 hover:bg-secondary-700 text-white font-medium rounded-lg transition-all duration-300;
+}
+
+.btn-accent {
+  @apply px-6 py-3 bg-accent-600 hover:bg-accent-700 text-white font-medium rounded-lg transition-all duration-300;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-primary-600 to-accent-700;
+}
+
+/* Tối ưu hóa hiệu ứng hover */
+.hover-effect {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Lazy loading cho các section */
+.lazy-section {
+  @apply opacity-0 translate-y-4;
+}
+
+.lazy-section.visible {
+  @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+}
+
+/* Tối ưu hóa hiệu ứng gradient */
+.optimized-gradient {
+  background-image: linear-gradient(var(--gradient-angle, 90deg), var(--gradient-from), var(--gradient-to));
+}
