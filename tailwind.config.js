@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
+        accent: ['Cormorant Garamond', 'serif'],
       },
       colors: {
         primary: {
@@ -51,13 +52,32 @@ export default {
           900: '#4c1d95',
           950: '#2e1065',
         },
+        gold: {
+          50: '#fefdf7',
+          100: '#fdf8e3',
+          200: '#faeec2',
+          300: '#f7de89',
+          400: '#f3ca57',
+          500: '#edb534',
+          600: '#d99724',
+          700: '#b3741d',
+          800: '#8f5c1c',
+          900: '#744a1b',
+          950: '#422709',
+        }
       },
       boxShadow: {
         'custom': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
         'custom-lg': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'elegant': '0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 10px -3px rgba(0, 0, 0, 0.05)',
+        'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(237, 181, 52, 0.1)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-gold': 'linear-gradient(to right, #d6ae7b, #edc967, #d6ae7b)',
+        'gradient-luxury': 'linear-gradient(135deg, #2c3e50, #4a6572)',
+        'pattern-light': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h20v20H0z\" fill=\"%23f8fafc\" opacity=\"0.05\"/%3E%3C/svg%3E')",
+        'pattern-dark': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h20v20H0z\" fill=\"%23ffffff\" opacity=\"0.05\"/%3E%3C/svg%3E')",
       }
     },
   },

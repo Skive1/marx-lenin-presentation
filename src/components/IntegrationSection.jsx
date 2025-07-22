@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGlobeAsia, FaChartLine, FaTrademark, FaLeaf, FaHandshake, FaFileSignature, FaRegHandshake } from 'react-icons/fa';
+import { FaGlobeAsia, FaChartLine, FaTrademark, FaLeaf, FaRegHandshake } from 'react-icons/fa';
 
 function IntegrationSection() {
   const integrationStrategies = [
@@ -50,26 +50,30 @@ function IntegrationSection() {
   ];
 
   return (
-    <section id="integration" className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="integration" className="py-24 bg-gradient-to-b from-gray-800 to-gray-900 relative">
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 bg-pattern-dark opacity-10"></div>
+      
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <span className="text-accent-600 dark:text-accent-400 text-sm font-semibold tracking-wider uppercase mb-2 block">Phần IV</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 dark:text-white font-display">
-            Phương hướng nâng cao hiệu quả hội nhập kinh tế quốc tế
+          <span className="text-gold-400 text-sm font-semibold tracking-[0.2em] uppercase mb-2 block">Phần III</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white font-display leading-tight">
+            Phương hướng nâng cao hiệu quả <br/>
+            <span className="font-accent italic text-gold-300">hội nhập kinh tế quốc tế</span>
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-accent-500 to-primary-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <div className="w-32 h-[2px] bg-gradient-gold mx-auto mb-10 rounded-full"></div>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
             Các chiến lược và giải pháp để Việt Nam nâng cao hiệu quả hội nhập kinh tế quốc tế trong quá trình phát triển
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {integrationStrategies.map((strategy, index) => (
             <motion.div
               key={index}
@@ -77,30 +81,32 @@ function IntegrationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`bg-white dark:bg-gray-800 rounded-xl shadow-custom p-8 border-l-4 border-${strategy.color}-500 hover:shadow-custom-lg transition-all duration-300`}
+              className="card-luxury hover-lift"
             >
-              <div className="flex items-center mb-6">
-                <div className={`bg-${strategy.color}-100 dark:bg-${strategy.color}-900/30 p-3 rounded-full mr-4 text-${strategy.color}-600 dark:text-${strategy.color}-400`}>
+              <div className="flex items-center mb-8">
+                <div className="bg-gray-700/80 p-4 rounded-full mr-5 text-gold-400 border border-gold-600/30">
                   {strategy.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white font-display">
+                <h3 className="text-2xl font-bold text-white font-display">
                   {index + 1}. {strategy.title}
                 </h3>
               </div>
               
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <div className="luxury-divider"></div>
+              
+              <p className="text-gray-300 mb-8 leading-relaxed">
                 {strategy.description}
               </p>
               
-              <div className={`bg-${strategy.color}-50/50 dark:bg-${strategy.color}-900/10 p-4 rounded-lg`}>
-                <h4 className={`font-semibold mb-3 text-${strategy.color}-700 dark:text-${strategy.color}-300`}>
+              <div className="bg-gray-700/40 p-6 rounded-lg border-l-4 border-gold-400">
+                <h4 className="font-semibold mb-4 text-gold-400 font-accent">
                   Điểm chính:
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {strategy.details.map((detail, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className={`text-${strategy.color}-500 dark:text-${strategy.color}-400 mr-2 mt-1`}>•</span>
-                      <span className="text-gray-600 dark:text-gray-300">{detail}</span>
+                      <span className="text-gold-400 mr-3 mt-1 text-lg">•</span>
+                      <span className="text-gray-300">{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -114,17 +120,18 @@ function IntegrationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-accent-500 to-primary-600 rounded-xl p-8 shadow-custom text-white"
+          className="mt-16 bg-gradient-luxury rounded-xl p-10 shadow-premium border border-gray-700"
         >
           <div className="flex flex-col md:flex-row items-center">
-            <div className="mb-6 md:mb-0 md:mr-8">
-              <div className="bg-white/20 p-5 rounded-full">
-                <FaRegHandshake className="text-white text-5xl" />
+            <div className="mb-8 md:mb-0 md:mr-10">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-full">
+                <FaRegHandshake className="text-gold-300 text-5xl" />
               </div>
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 font-display">Hội nhập kinh tế quốc tế - Động lực phát triển</h3>
-              <p className="text-white/90 text-lg leading-relaxed">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 font-display text-white">Hội nhập kinh tế quốc tế - Động lực phát triển</h3>
+              <div className="elegant-divider mb-6"></div>
+              <p className="text-gray-300 text-lg leading-relaxed">
                 Hội nhập kinh tế quốc tế là một quá trình đa chiều, đòi hỏi sự chuẩn bị kỹ lưỡng và chiến lược dài hạn. 
                 Việt Nam cần tận dụng tối đa các cơ hội từ các hiệp định thương mại tự do, đồng thời nâng cao năng lực 
                 cạnh tranh nội tại để đảm bảo phát triển bền vững trong bối cảnh toàn cầu hóa.

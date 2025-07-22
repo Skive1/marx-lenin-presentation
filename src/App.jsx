@@ -10,17 +10,17 @@ const TraditionalIndustries = lazy(() => import('./components/TraditionalIndustr
 const IntegrationSection = lazy(() => import('./components/IntegrationSection'));
 const ModernizationSection = lazy(() => import('./components/ModernizationSection'));
 const Conclusion = lazy(() => import('./components/Conclusion'));
-const Footer = lazy(() => import('./components/Footer'));
 
 // Loading component nhẹ
 const SectionLoader = () => (
   <div className="flex justify-center items-center py-20">
-    <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+    <div className="w-16 h-16 border-4 border-gold-400 border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  // Changing initial state to true to make dark mode the default
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -42,11 +42,11 @@ function App() {
         </Suspense>
         
         <Suspense fallback={<SectionLoader />}>
-          <TraditionalIndustries /> {/* III. Vì sao phải giữ gìn ngành nghề truyền thống */}
+          <IntegrationSection /> {/* III. Phương hướng nâng cao hiệu quả hội nhập */}
         </Suspense>
-        
+
         <Suspense fallback={<SectionLoader />}>
-          <IntegrationSection /> {/* IV. Phương hướng nâng cao hiệu quả hội nhập */}
+          <TraditionalIndustries /> {/* IV. Vì sao phải giữ gìn ngành nghề truyền thống */}
         </Suspense>
         
         <Suspense fallback={<SectionLoader />}>
@@ -55,10 +55,6 @@ function App() {
         
         <Suspense fallback={<SectionLoader />}>
           <Conclusion /> {/* VI. Giải đáp */}
-        </Suspense>
-        
-        <Suspense fallback={<SectionLoader />}>
-          <Footer />
         </Suspense>
       </div>
     </div>

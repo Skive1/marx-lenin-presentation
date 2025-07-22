@@ -91,10 +91,25 @@ function Hero() {
     }
   };
 
+  const decorativeLineVariants = {
+    hidden: { scaleX: 0, originX: 0 },
+    visible: { 
+      scaleX: 1,
+      transition: { 
+        duration: 1.2,
+        delay: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-700 to-accent-800 overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-luxury overflow-hidden">
+      {/* Pattern overlay */}
+      <div className="absolute inset-0 bg-pattern-dark opacity-10"></div>
+      
       <div 
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${bgLoaded ? 'opacity-20' : 'opacity-0'}`} 
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${bgLoaded ? 'opacity-30' : 'opacity-0'}`} 
         style={{ backgroundImage: bgLoaded ? 'url(/images/vietnam-development.jpg)' : 'none' }}
       ></div>
       
@@ -104,12 +119,29 @@ function Hero() {
           animate="visible"
           className="text-center"
         >
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-6"
+          >
+            <span className="inline-block text-gold-400 text-sm uppercase tracking-[0.2em] font-medium">
+              Phát triển bền vững
+            </span>
+          </motion.div>
+          
           <motion.h1 
             variants={titleVariants}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 font-display hardware-accelerated"
+            className="text-4xl md:text-6xl font-bold text-white mb-6 font-display hardware-accelerated leading-tight"
           >
-            Công Nghiệp Hóa, Hiện Đại Hóa và Hội Nhập Kinh Tế Quốc Tế
+            Công Nghiệp Hóa, Hiện Đại Hóa <br/>
+            <span className="font-accent italic text-gold-300">và Hội Nhập Kinh Tế Quốc Tế</span>
           </motion.h1>
+          
+          <motion.div
+            variants={decorativeLineVariants}
+            className="w-32 h-[2px] bg-gradient-gold mx-auto my-8 rounded-full"
+          ></motion.div>
           
           <motion.h2 
             variants={subtitleVariants}
@@ -120,12 +152,13 @@ function Hero() {
           
           <motion.p 
             variants={descriptionVariants}
-            className="text-lg md:text-xl text-white mb-12 max-w-3xl mx-auto hardware-accelerated"
+            className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto hardware-accelerated leading-relaxed"
           >
-            Tìm hiểu về quá trình phát triển kinh tế của Việt Nam thông qua công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế
+            Tìm hiểu về quá trình phát triển kinh tế của Việt Nam thông qua công nghiệp hóa, 
+            hiện đại hóa và hội nhập kinh tế quốc tế
           </motion.p>
           
-          <div className="flex flex-col md:flex-row justify-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center gap-6">
             <Link 
               to="about"
               spy={true}
@@ -137,7 +170,7 @@ function Hero() {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="px-8 py-3 bg-white text-primary-700 rounded-full font-bold text-lg shadow-lg hardware-accelerated"
+                className="px-10 py-4 bg-gradient-gold text-gray-900 rounded-full font-bold text-lg shadow-lg hardware-accelerated"
               >
                 Tìm hiểu thêm
               </motion.button>
@@ -160,7 +193,7 @@ function Hero() {
             className="cursor-pointer hardware-accelerated"
           >
             <svg 
-              className="w-12 h-12 text-white" 
+              className="w-12 h-12 text-gold-300" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24" 

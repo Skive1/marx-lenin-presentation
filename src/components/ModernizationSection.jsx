@@ -72,37 +72,41 @@ function ModernizationSection() {
   ];
 
   return (
-    <section id="modernization" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="modernization" className="py-24 bg-gradient-to-b from-gray-900 to-gray-800 relative">
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 bg-pattern-dark opacity-10"></div>
+      
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-accent-600 dark:text-accent-400 text-sm font-semibold tracking-wider uppercase mb-2 block">Phần V</span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white font-display">
-            Giải pháp kết hợp công nghiệp hóa với bảo tồn ngành nghề truyền thống
+          <span className="text-gold-400 text-sm font-semibold tracking-[0.2em] uppercase mb-2 block">Phần V</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white font-display leading-tight">
+            Giải pháp kết hợp công nghiệp hóa với <br/>
+            <span className="font-accent italic text-gold-300">bảo tồn ngành nghề truyền thống</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent-500 to-primary-500 mx-auto mb-6"></div>
+          <div className="w-32 h-[2px] bg-gradient-gold mx-auto mb-10 rounded-full"></div>
         </motion.div>
 
         {/* Tabs Navigation */}
-        <div className="mb-8 overflow-x-auto pb-2 no-scrollbar">
-          <div className="flex space-x-1 md:space-x-2 md:justify-center">
+        <div className="mb-10 overflow-x-auto pb-3 no-scrollbar">
+          <div className="flex space-x-2 md:space-x-3 md:justify-center">
             {solutions.map((solution, index) => (
               <motion.button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-3 py-2 rounded-lg flex items-center space-x-2 transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg flex items-center space-x-2 transition-all duration-300 ${
                   activeTab === index 
-                    ? `bg-${solution.color}-100 dark:bg-${solution.color}-900/30 text-${solution.color}-700 dark:text-${solution.color}-300 border-b-2 border-${solution.color}-500` 
-                    : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/80'
+                    ? `bg-gray-700/80 text-white border-b-2 border-gold-400` 
+                    : 'bg-gray-800/60 text-gray-400 hover:bg-gray-700/60 hover:text-gray-300'
                 }`}
                 whileTap={{ scale: 0.97 }}
               >
-                <span className={`${activeTab === index ? `text-${solution.color}-600 dark:text-${solution.color}-400` : 'text-gray-500 dark:text-gray-400'}`}>
+                <span className={`${activeTab === index ? 'text-gold-400' : 'text-gray-400'}`}>
                   {solution.icon}
                 </span>
                 <span className="font-medium text-sm md:text-base whitespace-nowrap">{solution.title}</span>
@@ -120,7 +124,7 @@ function ModernizationSection() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { duration: 0.5 } }
           }}
-          className="relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"
+          className="relative bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-elegant overflow-hidden border border-gray-700"
         >
           {solutions.map((solution, index) => (
             <motion.div
@@ -134,15 +138,15 @@ function ModernizationSection() {
               className="w-full"
             >
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-56 md:h-auto">
+                <div className="relative h-64 md:h-auto">
                   <img 
                     src={solution.image} 
                     alt={solution.title} 
                     className="w-full h-full object-cover"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-${solution.color}-900/80 to-transparent opacity-60`}></div>
-                  <div className="absolute bottom-0 left-0 p-4 md:p-6 text-white">
-                    <div className={`bg-${solution.color}-500/80 backdrop-blur-sm p-2 md:p-3 rounded-lg inline-block mb-2`}>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent`}></div>
+                  <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <div className={`bg-gold-500/80 backdrop-blur-sm p-3 md:p-4 rounded-lg inline-block mb-3`}>
                       {solution.icon}
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold font-display">
@@ -151,18 +155,18 @@ function ModernizationSection() {
                   </div>
                 </div>
                 
-                <div className="p-5 md:p-8">
-                  <div className="bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg mb-5">
-                    <p className="text-gray-700 dark:text-gray-200">
+                <div className="p-6 md:p-10">
+                  <div className="bg-gray-700/30 p-5 rounded-lg mb-6 backdrop-blur-sm border-l-4 border-gold-400">
+                    <p className="text-gray-200 leading-relaxed">
                       {solution.description}
                     </p>
                   </div>
                   
-                  <h4 className={`text-${solution.color}-600 dark:text-${solution.color}-400 font-semibold mb-3`}>
+                  <h4 className={`text-gold-400 font-semibold mb-4 font-accent`}>
                     Điểm chính:
                   </h4>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {solution.points.map((point, idx) => (
                       <motion.li 
                         key={idx} 
@@ -171,20 +175,13 @@ function ModernizationSection() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2, delay: idx * 0.1 }}
                       >
-                        <span className={`flex-shrink-0 w-5 h-5 rounded-full bg-${solution.color}-100 dark:bg-${solution.color}-900/30 flex items-center justify-center mr-2 mt-0.5`}>
-                          <span className={`text-${solution.color}-600 dark:text-${solution.color}-400 text-xs`}>{idx + 1}</span>
+                        <span className={`flex-shrink-0 w-6 h-6 rounded-full bg-gray-700/80 flex items-center justify-center mr-3 mt-0.5 border border-gold-600/30`}>
+                          <span className="text-gold-400 text-xs">{idx + 1}</span>
                         </span>
-                        <span className="text-gray-700 dark:text-gray-300">{point}</span>
+                        <span className="text-gray-300">{point}</span>
                       </motion.li>
                     ))}
                   </ul>
-                  
-                  <div className="mt-5 flex justify-end">
-                    <button className={`flex items-center text-${solution.color}-600 dark:text-${solution.color}-400 text-sm font-medium hover:underline`}>
-                      <span>Chi tiết</span>
-                      <FaArrowRight className="ml-1 text-xs" />
-                    </button>
-                  </div>
                 </div>
               </div>
             </motion.div>
@@ -196,13 +193,14 @@ function ModernizationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg p-6 shadow-md text-white"
+          className="mt-16 bg-gradient-luxury rounded-lg p-8 shadow-premium text-white border border-gray-700"
         >
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-bold mb-4 font-display text-white">
+            <h3 className="text-xl md:text-2xl font-bold mb-6 font-display text-white">
               Hài hòa giữa truyền thống và hiện đại
             </h3>
-            <p className="text-white/90">
+            <div className="w-24 h-[2px] bg-gradient-gold mx-auto mb-6"></div>
+            <p className="text-white/90 leading-relaxed">
               Sự kết hợp giữa công nghiệp hóa, hiện đại hóa với bảo tồn ngành nghề truyền thống không phải là hai xu hướng đối lập mà là quá trình hỗ trợ lẫn nhau, giúp Việt Nam phát triển bền vững và giữ gìn bản sắc văn hóa.
             </p>
           </div>

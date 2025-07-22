@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,10 +11,12 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  letter-spacing: 0.015em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.01em;
 }
 
 /* Tối ưu hóa hiệu suất rendering */
@@ -42,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Các lớp utility */
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-6 font-display;
+  @apply text-3xl md:text-4xl font-bold mb-6 font-display tracking-tight;
 }
 
 .section-subtitle {
@@ -50,7 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-  @apply bg-white dark:bg-gray-800 rounded-lg shadow-custom p-6 transition-all duration-300 hover:shadow-custom-lg;
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-elegant p-8 transition-all duration-300 hover:shadow-premium;
+}
+
+.card-luxury {
+  @apply bg-white dark:bg-gray-800/90 rounded-lg shadow-elegant p-8 border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-premium;
 }
 
 .btn-primary {
@@ -65,13 +73,33 @@ h1, h2, h3, h4, h5, h6 {
   @apply px-6 py-3 bg-accent-600 hover:bg-accent-700 text-white font-medium rounded-lg transition-all duration-300;
 }
 
+.btn-gold {
+  @apply px-6 py-3 bg-gradient-gold text-gray-900 font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg;
+}
+
 .gradient-bg {
   @apply bg-gradient-to-br from-primary-600 to-accent-700;
+}
+
+.gradient-gold-bg {
+  @apply bg-gradient-gold;
+}
+
+.luxury-divider {
+  @apply h-px bg-gradient-gold w-24 my-6;
+}
+
+.elegant-divider {
+  @apply h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-full my-6;
 }
 
 /* Tối ưu hóa hiệu ứng hover */
 .hover-effect {
   @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:translate-y-[-4px];
 }
 
 /* Lazy loading cho các section */
@@ -83,7 +111,21 @@ h1, h2, h3, h4, h5, h6 {
   @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
 }
 
-/* Tối ưu hóa hiệu ứng gradient */
-.optimized-gradient {
-  background-image: linear-gradient(var(--gradient-angle, 90deg), var(--gradient-from), var(--gradient-to));
+/* Image styling */
+.luxury-image {
+  @apply rounded-lg shadow-elegant border border-gray-100 dark:border-gray-700;
+}
+
+.gold-border {
+  @apply border-2 border-gold-300;
+}
+
+/* Fancy quote */
+.luxury-quote {
+  @apply relative italic text-lg text-gray-600 dark:text-gray-300 pl-5 border-l-4 border-gold-400;
+}
+
+/* Accent text */
+.accent-text {
+  @apply font-accent font-semibold text-gold-600 dark:text-gold-400;
 }

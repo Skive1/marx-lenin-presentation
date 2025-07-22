@@ -5,19 +5,19 @@ function IndustrializationSection() {
   const reasons = [
     {
       text: "Xuất phát từ yêu cầu phát triển lực lượng sản xuất, xây dựng cơ sở vật chất - kỹ thuật cho chủ nghĩa xã hội.",
-      icon: <FaIndustry className="text-primary-500 dark:text-primary-400 text-xl" />
+      icon: <FaIndustry className="text-gold-400 text-xl" />
     },
     {
       text: "Đáp ứng yêu cầu phát triển kinh tế, nâng cao đời sống nhân dân, rút ngắn nguy cơ tụt hậu xa về kinh tế so với các nước trong khu vực và trên thế giới.",
-      icon: <FaUsers className="text-primary-500 dark:text-primary-400 text-xl" />
+      icon: <FaUsers className="text-gold-400 text-xl" />
     },
     {
       text: "Bảo đảm độc lập, tự chủ, nâng cao thế và lực của đất nước trong bối cảnh hội nhập kinh tế quốc tế sâu rộng và cạnh tranh toàn cầu.",
-      icon: <FaGlobeAsia className="text-primary-500 dark:text-primary-400 text-xl" />
+      icon: <FaGlobeAsia className="text-gold-400 text-xl" />
     },
     {
       text: "Phát triển hài hòa giữa kinh tế - xã hội, bảo vệ môi trường, đảm bảo phát triển nhanh và bền vững.",
-      icon: <FaLeaf className="text-primary-500 dark:text-primary-400 text-xl" />
+      icon: <FaLeaf className="text-gold-400 text-xl" />
     }
   ];
 
@@ -55,21 +55,25 @@ function IndustrializationSection() {
   ];
 
   return (
-    <section id="industrialization" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="industrialization" className="py-24 bg-gradient-to-b from-gray-900 to-gray-800 relative">
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 bg-pattern-dark opacity-10"></div>
+      
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <span className="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-wider uppercase mb-2 block">Phần II</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 dark:text-white font-display">
-            Tính tất yếu khách quan và nội dung công nghiệp hóa - hiện đại hóa
+          <span className="text-gold-400 text-sm font-semibold tracking-[0.2em] uppercase mb-2 block">Phần II</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white font-display leading-tight">
+            Tính tất yếu khách quan và <br/>
+            <span className="font-accent italic text-gold-300">nội dung công nghiệp hóa - hiện đại hóa</span>
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <div className="w-32 h-[2px] bg-gradient-gold mx-auto mb-10 rounded-full"></div>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
             Phân tích các yếu tố cấu thành tính tất yếu và nội dung cơ bản của quá trình CNH-HĐH ở Việt Nam
           </p>
         </motion.div>
@@ -80,9 +84,9 @@ function IndustrializationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-custom border-l-4 border-primary-500"
+            className="bg-gray-800 rounded-xl p-10 shadow-elegant border border-gray-700"
           >
-            <h3 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white font-display">
+            <h3 className="text-3xl font-bold mb-10 text-white font-display">
               1. Tính tất yếu khách quan của CNH, HĐH tại Việt Nam
             </h3>
             
@@ -94,12 +98,12 @@ function IndustrializationSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:shadow-md transition-all duration-300"
+                  className="flex items-start p-6 bg-gray-700/50 rounded-lg hover:shadow-premium transition-all duration-300 hover-lift"
                 >
-                  <div className="mr-4 mt-1 bg-white dark:bg-gray-700 p-2 rounded-full shadow-sm">
+                  <div className="mr-5 mt-1 bg-gray-800 p-3 rounded-full shadow-sm border border-gold-600/30">
                     {reason.icon}
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {reason.text}
                   </p>
                 </motion.div>
@@ -115,7 +119,7 @@ function IndustrializationSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-3xl font-bold mb-10 text-gray-800 dark:text-white text-center font-display">
+          <h3 className="text-3xl font-bold mb-12 text-white text-center font-display">
             2. Nội dung chủ yếu của công nghiệp hóa - hiện đại hóa ở Việt Nam
           </h3>
           
@@ -127,17 +131,18 @@ function IndustrializationSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-custom hover:shadow-custom-lg transition-all duration-300 border-t-4 border-primary-500 group"
+                className="card-luxury hover-lift group"
               >
-                <div className="bg-primary-100 dark:bg-primary-900/30 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-primary-200 dark:group-hover:bg-primary-800/30 transition-colors duration-300">
-                  <div className="text-primary-600 dark:text-primary-400">
+                <div className="bg-gray-700/80 rounded-full w-16 h-16 flex items-center justify-center mb-8 group-hover:bg-gray-600/80 transition-colors duration-300 border border-gold-600/30">
+                  <div className="text-gold-400">
                     {content.icon}
                   </div>
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-gray-800 dark:text-white font-display">
+                <h4 className="text-xl font-bold mb-4 text-white font-display">
                   {content.title}
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <div className="luxury-divider"></div>
+                <p className="text-gray-300 leading-relaxed">
                   {content.text}
                 </p>
               </motion.div>
@@ -148,16 +153,17 @@ function IndustrializationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl p-6 shadow-custom hover:shadow-custom-lg transition-all duration-300 md:col-span-2 lg:col-span-3 text-white"
+              className="bg-gradient-luxury rounded-xl p-8 shadow-premium transition-all duration-300 md:col-span-2 lg:col-span-3 text-white border border-gray-700"
             >
-              <div className="flex items-center mb-6">
-                <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-6">
-                  <FaBrain className="text-white text-2xl" />
+              <div className="flex flex-col md:flex-row md:items-center mb-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-full w-16 h-16 flex items-center justify-center mb-6 md:mb-0 md:mr-6">
+                  <FaBrain className="text-gold-300 text-2xl" />
                 </div>
                 <h4 className="text-2xl font-bold font-display">
                   Phát triển kinh tế tri thức
                 </h4>
               </div>
+              <div className="elegant-divider"></div>
               <p className="text-white/90 text-lg leading-relaxed">
                 Từng bước phát triển kinh tế tri thức, lấy sáng tạo và tài năng con người làm động lực tăng trưởng chủ yếu.
               </p>
