@@ -33,8 +33,8 @@ function Conclusion() {
         >
           <span className="text-gold-400 text-sm font-semibold tracking-[0.2em] uppercase mb-2 block">Phần VI</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white font-display leading-tight">
-            Giải đáp: Vì sao cần kết hợp CNH-HĐH<br/>
-            <span className="font-accent italic text-gold-300">với bảo tồn ngành nghề truyền thống?</span>
+            Giải đáp: Vì sao Việt Nam phải tiến hành CNH, HĐH<br/>
+            <span className="font-accent italic text-gold-300">mà vẫn giữ ngành nghề truyền thống?</span>
           </h2>
           <div className="w-32 h-[2px] bg-gradient-gold mx-auto mb-10 rounded-full"></div>
         </motion.div>
